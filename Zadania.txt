@@ -1,0 +1,130 @@
+ZADANIE 1:
+{
+	1.
+	{
+	CREATE TABLE postac (id_postaci INT PRIMARY KEY NOT NULL AUTO_INCREMENT, nazwa varchar(40), rodzaj enum('wiking,'ptak',kobieta'), data_ur date, wiek int unsigned);
+	}
+
+
+	2.
+	{
+	INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) VALUES ('1', 'Bjorn', 'wiking', '1995-04-25', '26');
+	INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) VALUES ('2', 'Drozd', 'ptak', '1994-03-17', '26');
+	INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) VALUES ('3', 'Tesciowa', 'kobieta', '1434-03-17', '700');
+	}
+
+	3.
+	UPDATE postac SET wiek='88' WHERE id_postaci='3';
+}
+
+ZADANIE 2:
+{
+
+	1. 
+	{
+		CREATE TABLE walizka (id_walizki INT NOT NULL AUTO_INCREMENT PRIMARY KEY,pojemnosc INT UNSIGNED, kolor enum('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlasciciela INT, FOREIGN KEY (id_wlasciciela) REFERENCES postac(id_postaci) ON DELETE CASCADE);
+	}
+
+	2.
+	{
+		ALTER TABLE walizka ALTER kolor SET DEFAULT 'rozowy';
+	}
+
+	3.
+	{
+		INSERT INTO walizka (id_walizki, pojemnosc, kolor, id_wlasciciela) VALUES ('1', '50', 'czerwony', '1');
+		INSERT INTO walizka (id_walizki, pojemnosc, kolor, id_wlasciciela) VALUES ('2', '150', 'teczowy', '3');
+}
+}
+
+
+ZADANIE 3:
+{
+	1.
+	{
+		CREATE TABLE izba (adres_budynku varchar(200), nazwa_izby varchar(60), metraz INT UNSIGNED, wlasciciel INT, FOREIGN KEY (wlasciciel) REFERENCES postac(id_postaci) ON DELETE SET NULL, PRIMARY KEY(adres_budynku, nazwa_izby));
+	}
+
+	2.
+	{
+		ALTER TABLE izba ADD kolor_izby VARCHAR(40) DEFAULT 'czarny' AFTER metraz;
+	}
+
+	3.
+	{
+		INSERT INTO izba (adres_budynku, nazwa_izby, metraz, kolor_izby, wlasciciel) VALUES ('Srebrna 3', 'spizarnia', '35', 'bezowy', '3');
+
+}
+}
+
+ZADANIE 4:
+{
+	1.
+	{
+	CREATE TABLE przetwory (id_przetworu INT(4) NOT NULL PRIMARY KEY, rok_produkcji INT DEFAULT '1654', id_wykonawcy INT, FOREIGN KEY (id_wykonawcy) REFERENCES postac(id_postaci), zawartosc VARCHAR(100), dodatek VARCHAR(40) DEFAULT 'papryczka_chilli', id_konsumenta INT, FOREIGN KEY (id_konsumenta) REFERENCES postac(id_postaci));
+	}
+	
+	2.
+	{
+	INSERT INTO przetwory (id_przetworu, rok_produkcji, id_wykonawcy, zawartosc, dodatek, id_konsumenta) VALUES ('1', '2021', '1', 'bigos', 'papryczka_chilli', '3');
+	}
+}
+
+ZADANIE 5
+{
+	1.
+	{
+	INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) 
+	VALUES 
+	('4', 'Ragnar', 'wiking', '1800-02-19', '221'),
+	('5', 'Harald', 'wiking', '1952-08-03', '70'),
+	('6', 'Erik', 'wiking', '1987-09-22', '34'),
+	('7', 'Olav', 'wiking', '1678-12-24', '340'),
+	('8', 'Erik', 'wiking', '1778-06-08', '238');
+	}
+	
+	
+	2.
+	{
+	CREATE TABLE statek (nazwa_statku VARCHAR(40) PRIMARY KEY, rodzaj_statku enum('handlowy', 'zaopatrzeniowy', 'wojskowy') DEFAULT 'wojskowy', data_wodowania DATE, max_ladownosc INT UNSIGNED);
+	}
+	
+	3.
+	{
+	INSERT INTO statek (nazwa_statku, rodzaj_statku, data_wodowania, max_ladownosc) 
+	VALUES 
+	('Valkyria', 'wojskowy', '1302-07-07', '6000'), 
+	('Odin', 'zaopatrzeniowy', '1421-09-12', '15000');
+	}
+	
+	4.
+	{
+	ALTER TABLE postac ADD funkcja VARCHAR(40) AFTER wiek;
+	}
+	
+	5.
+	{
+	UPDATE postac SET funkcja='kapitan' WHERE id_postaci='1';
+	}
+
+	6.
+	{
+	ALTER TABLE postac ADD nazwa_statku VARCHAR(40);
+	ALTER TABLE postac ADD FOREIGN KEY (nazwa_statku) REFERENCES statek(nazwa_statku);
+	}
+	
+	7.
+	{
+	UPDATE postac SET nazwa_statku='Valkyria' WHERE rodzaj='wiking' OR rodzaj='ptak';
+	}
+	
+	8.
+	{
+	DELETE FROM izba WHERE nazwa_izby='spizarnia';
+	}
+	
+	9.
+	{
+	DROP TABLE izba;
+	}
+	
