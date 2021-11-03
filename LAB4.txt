@@ -23,6 +23,6 @@ Nieszczera', 'syrena', '1800-02-02', '221');
 	{
 	a) UPDATE postac SET nazwa_statku = 'Valkyria' WHERE nazwa LIKE '%a%';
 	b) UPDATE statek SET max_ladownosc =max_ladownosc*.7  WHERE data_wodowania > '1900-01-01';
-
+	c) SELECT wiek, nazwa, IF(wiek>1000, "Tak", "Nie") FROM postac;
 	}
 	
