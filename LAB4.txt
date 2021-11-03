@@ -19,7 +19,7 @@ ZADANIE 2.
 ZADANIE 3.
 	{
 		a) UPDATE postac SET nazwa_statku = 'Valkyria' WHERE nazwa LIKE '%a%';
-		b) UPDATE statek SET max_ladownosc =max_ladownosc*.7  WHERE data_wodowania > '1900-01-01';
+		b) UPDATE statek SET max_ladownosc =max_ladownosc*.7  WHERE data_wodowania > '1901-01-01';
 		c) SELECT wiek, nazwa, IF(wiek>1000, "Tak", "Nie") FROM postac;
 	}
 ZADANIE 4.
