@@ -10,7 +10,7 @@ ZADANIE 1.
 		
 ZADANIE 2.
 	{
-		a) ALTER TABLE postac ADD pesel INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
+		a) ALTER TABLE postac ADD pesel CHAR(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
 		b) ALTER TABLE postac MODIFY COLUMN rodzaj enum('wiking', 'ptak', 'kobieta', 'syrena');
 		c) INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) VALUES ('7', 'Gertruda
 		Nieszczera', 'syrena', '1800-02-02', '221');
