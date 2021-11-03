@@ -1,0 +1,28 @@
+ZADANIE 1.
+	{
+		a) DELETE FROM postac WHERE wiek>230;
+		b) ALTER TABLE postac DROP CONSTRAINT postac_ibfk_1;
+		ALTER TABLE przetwory DROP CONSTRAINT przetwory_ibfk_1;
+		ALTER TABLE przetwory DROP CONSTRAINT przetwory_ibfk_2;
+		ALTER TABLE walizka DROP CONSTRAINT walizka_ibfk_1;
+		
+		ALTER TABLE postac DROP PRIMARY KEY, change id_postaci id_postaci int(11) NOT NULL;
+
+
+		}
+		
+ZADANIE 2.
+	{
+		a) ALTER TABLE postac ADD pesel INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
+		b) ALTER TABLE postac MODIFY COLUMN rodzaj enum('wiking', 'ptak', 'kobieta', 'syrena');
+		c)  INSERT INTO postac (id_postaci, nazwa, rodzaj, data_ur, wiek) VALUES ('7', 'Gertruda
+Nieszczera', 'syrena', '1800-02-02', '221');
+	}
+	
+	ZADANIE 3.
+	{
+	a) UPDATE postac SET nazwa_statku = 'Valkyria' WHERE nazwa LIKE '%a%';
+	b) UPDATE statek SET max_ladownosc =max_ladownosc*.7  WHERE data_wodowania > '1900-01-01';
+
+	}
+	
