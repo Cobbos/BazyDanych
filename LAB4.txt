@@ -26,6 +26,8 @@ ZADANIE 3.
 ZADANIE 4.
 	{
 		a) INSERT INTO postac (id_postaci, nazwa, data_ur, wiek) VALUES ('8', 'Loko', '1969-04-02', '52');
+		b) CREATE TABLE marynarz LIKE postac;
+		c)
 	}
 	
 	
