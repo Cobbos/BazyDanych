@@ -1,0 +1,8 @@
+LAB 6
+
+ZAD 1.
+{
+1.  SELECT AVG(waga) AS sredniawaga FROM kreatura;
+2.  SELECT rodzaj,COUNT(*) as liczba, AVG(waga) FROM kreatura GROUP BY rodzaj;
+3.  SELECT rodzaj, AVG(TIMESTAMPDIFF(YEAR, dataUr, CURDATE())) AS age FROM kreatura GROUP BY rodzaj;
+}
