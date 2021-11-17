@@ -1,0 +1,8 @@
+ZAD 1.
+a) CREATE TABLE kreatura AS SELECT * FROM wikingowie.kreatura;
+CREATE TABLE zasob AS SELECT * FROM wikingowie.zasob;
+CREATE TABLE ekwipunek AS SELECT * FROM wikingowie.ekwipunek;
+
+b) SELECT * FROM zasob;
+c) SELECT * FROM zasob WHERE rodzaj=jedzenie;
+d) SELECT idZasobu, ilosc FROM kreatura WHERE idKreatury=1 OR idKreatury=3 OR idKreatury = 5;
