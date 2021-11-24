@@ -17,7 +17,7 @@ ZAD 1.
 ZAD 4.
 {
 1.
-2.
+2. SELECT * FROM kreatura k inner join ekwipunek e on k.idKreatury=e.idKreatury inner join zasob z on e.idZasobu=z.idZasobu where z.rodzaj='jedzenie' order by k.dataUr desc limit 5;
 3.  SELECT k.nazwa, k2.nazwa FROM kreatura k INNER JOIN kreatura k2 on k.idKreatury+5=k2.idKreatury;
 
 
