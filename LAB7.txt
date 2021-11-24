@@ -1,0 +1,5 @@
+ZAD 1.
+{
+2. SELECT * FROM kreatura k LEFT JOIN uczestnicy u ON k.idKreatury=u.id_uczestnika where u.id_uczestnika is NULL;
+
+}
