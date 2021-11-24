@@ -1,5 +1,6 @@
 ZAD 1.
 {
 2. SELECT * FROM kreatura k LEFT JOIN uczestnicy u ON k.idKreatury=u.id_uczestnika where u.id_uczestnika is NULL;
+3. SELECT w.nazwa, sum(e.ilosc) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN ekwipunek e on u.id_uczestnika=e.idKreatury GROUP BY w.id_wyprawy;
 
 }
