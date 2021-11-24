@@ -6,3 +6,19 @@ ZAD 1.
 2.  SELECT rodzaj,COUNT(*) as liczba, AVG(waga) FROM kreatura GROUP BY rodzaj;
 3.  SELECT rodzaj, AVG(TIMESTAMPDIFF(YEAR, dataUr, CURDATE())) AS age FROM kreatura GROUP BY rodzaj;
 }
+
+
+
+
+
+
+
+
+ZAD 4.
+{
+1.
+2.
+3. SELECT * FROM kreatura k INNER JOIN kreatura k2 on k.idKreatury+5=k2.idKreatury;
+
+}
+
