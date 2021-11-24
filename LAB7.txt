@@ -4,3 +4,8 @@ ZAD 1.
 3. SELECT w.nazwa, sum(e.ilosc) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN ekwipunek e on u.id_uczestnika=e.idKreatury GROUP BY w.id_wyprawy;
 
 }
+
+SELECT w.nazwa, count(u.id_uczestnika), GROUP_CONCAT (k.nazwa) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k on u.id_uczestnika=k.idKreatury GROUP BY w.id_wyprawy;
+
+}
+
