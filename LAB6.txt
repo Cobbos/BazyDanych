@@ -25,6 +25,6 @@ ZAD 4.
 ZAD 5.
 {
 1.  SELECT k.rodzaj, sum(e.ilosc), avg(e.ilosc*z.waga) FROM kreatura k INNER JOIN ekwipunek e ON k.idKreatury=e.idKreatury inner join zasob z ON e.idZasobu=z.idZasobu WHERE k.rodzaj not in ('malpa', 'waz')  GROUP BY k.rodzaj HAVING sum(e.ilosc) < 30;
+2.  SELECT k.nazwa, k.rodzaj, k.dataUr from kreatura k, (select rodzaj, min(dataUr) as min, max(dataUr) as max FROM kreatura GROUP BY rodzaj) AS pod WHERE k.dataUr=pod.min OR k.dataUr=pod.max  and k.rodzaj=pod.rodzaj;
 
-2. 
 }
