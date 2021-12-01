@@ -6,8 +6,11 @@ ZAD 1.
 ZAD 2.
 }
 
- 1. SELECT w.nazwa, count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k on u.id_uczestnika=k.idKreatury GROUP BY w.id_wyprawy;
- 2. SELECT w.nazwa,group_concat(k.nazwa),  count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u ON w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k ON k.idKreatury=u.id_uczestnika GROUP BY w.nazwa;
+ 1. SELECT w.nazwa,group_concat(k.nazwa),  count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u ON w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k ON k.idKreatury=u.id_uczestnika GROUP BY w.nazwa;
+ 2.  SELECT e.idEtapu, s.nazwa, k.nazwa, w.nazwa FROM kreatura k INNER JOIN wyprawa w ON w.kierownik=k.idKreatury INNER JOIN etapy_wyprawy e on e.idWyprawy=w.id_wyprawy INNER JOIN sektor s ON s.id_sektora=e.sektor ORDER BY w.data_rozpoczecia, e.kolejnosc;
+ 
+ 
+
 
 
 }
