@@ -13,12 +13,15 @@ ZAD 2.
 ZAD 3.
 {
 1. SELECT count(idwyprawy), s.nazwa FROM etapy_wyprawy e LEFT JOIN sektor s on s.id_sektora=e.sektor GROUP BY s.nazwa;
-2. SELECT k.nazwa, IF(count(u.id_uczestnika)>0, "bral/a udzial w wyprawie", "nie bral/a udzialu")  FROM kreatura k LEFT JOIN uczestnicy u ON u.id_uczestnika=k.idKreatury GROUP BY k.nazwa;
-
-
-
-
+2. SELECT k.nazwa, IF(count(u.id_uczestnika)>0, "bral/a udzial w wyprawie", "nie bral/a udzialu") AS "Bral/a udzial w wyprawie?"  FROM kreatura k LEFT JOIN uczestnicy u ON u.id_uczestnika=k.idKreatury GROUP BY k.nazwa;
 
 }
 
+ZAD 4.
+{
+1.SELECT w.nazwa, sum(LENGTH(dziennik)) suma  FROM etapy_wyprawy  ew LEFT JOIN wyprawa w ON w.id_wyprawy=ew.idWyprawy  GROUP BY w.nazwa HAVING suma<400;
+
+2.
+
+}
 
