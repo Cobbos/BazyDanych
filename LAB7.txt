@@ -21,7 +21,11 @@ ZAD 4.
 {
 1.SELECT w.nazwa, sum(LENGTH(dziennik)) suma  FROM etapy_wyprawy  ew LEFT JOIN wyprawa w ON w.id_wyprawy=ew.idWyprawy  GROUP BY w.nazwa HAVING suma<400;
 
-2.
+2. SELECT w.nazwa,SUM( e.idZasobu*e.Ilosc*z.waga) suma FROM wyprawa w INNER JOIN ekwipunek e INNER JOIN zasob z ON z.idZasobu=e.idZasobu GROUP BY w.id_wyprawy;
+ 
+WYPRAWA
+EKWIPUNEK
+ZASOB
 
 }
 
