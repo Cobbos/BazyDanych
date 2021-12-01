@@ -3,8 +3,12 @@ ZAD 1.
 2. SELECT * FROM kreatura k LEFT JOIN uczestnicy u ON k.idKreatury=u.id_uczestnika where u.id_uczestnika is NULL;
 3. SELECT w.nazwa, sum(e.ilosc) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN ekwipunek e on u.id_uczestnika=e.idKreatury GROUP BY w.id_wyprawy;
 
+ZAD 2.
 }
- SELECT w.nazwa, count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k on u.id_uczestnika=k.idKreatury GROUP BY w.id_wyprawy;
+
+ 1. SELECT w.nazwa, count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u on w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k on u.id_uczestnika=k.idKreatury GROUP BY w.id_wyprawy;
+ 2. SELECT w.nazwa,group_concat(k.nazwa),  count(u.id_uczestnika) FROM wyprawa w INNER JOIN uczestnicy u ON w.id_wyprawy=u.id_wyprawy INNER JOIN kreatura k ON k.idKreatury=u.id_uczestnika GROUP BY w.nazwa;
+
 
 }
 
