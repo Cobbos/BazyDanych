@@ -1,0 +1,18 @@
+ZADANIE 1.
+{
+1. SELECT nazwisko FROM pracownik ORDER BY nazwisko ASC;
+2. SELECT imie, nazwisko, pensja FROM pracownik WHERE data_urodzenia>1979-00-00;
+3. SELECT * FROM pracownik WHERE pensja BETWEEN 3500 AND 5000;
+4. SELECT * FROM stan_magazynowy WHERE ilosc>10;
+5. SELECT * FROM towar WHERE (nazwa_towaru LIKE 'A%') OR (nazwa_towaru LIKE 'B%') OR (nazwa_towaru LIKE 'C%');
+6. SELECT * FROM klient WHERE czy_firma=0;
+7. SELECT * FROM zamowienie ORDER BY data_zamowienia DESC LIMIT 10;
+8. SELECT * FROM pracownik ORDER BY pensja ASC LIMIT 5;
+9. SELECT * FROM towar WHERE nazwa_towaru NOT LIKE '%a%' ORDER BY cena_zakupu DESC LIMIT 10;
+10. SELECT * FROM towar t INNER JOIN stan_magazynowy s ON t.id_towaru=s.towar INNER JOIN jednostka_miary j ON j.id_jednostki=s.jm WHERE j.id_jednostki=3 ORDER BY nazwa_towaru ASC, cena_zakupu DESC;
+
+
+
+
+
+}
