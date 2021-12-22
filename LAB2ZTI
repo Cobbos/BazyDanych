@@ -20,5 +20,17 @@ stan_magazynowy - ilość towaru (towar, ilosc)
 towar - (nazwa_towaru)
 kategoria (id_kategori, nazwa_kategori)
 SELECT t.nazwa_towaru, k.nazwa_kategori, s.ilosc FROM towar t INNER JOIN kategoria k ON t.kategoria=k.id_kategori INNER JOIN stan_magazynowy s ON s.towar=t.id_towaru ORDER BY s.ilosc DESC;
-
-
+3. SELECT * FROM zamowienie WHERE status_zamowienia!=6;
+4.  
+klient (id_klienta, pelna_nazwa)
+adres_klienta (id_adresu, miejscowosc)
+typ_adresu (=1)
+SELECT k.id_klienta, k.pelna_nazwa, a.miejscowosc FROM klient k INNER JOIN adres_klienta a ON k.id_klienta=a.id_adresu WHERE a.miejscowosc = "Olsztyn" AND a.typ_adresu="1";
+5. SELECT j.nazwa FROM jednostka_miary j LEFT JOIN stan_magazynowy s ON j.id_jednostki=s.jm;
+6.
+numer zamówienia, nazwa towaru, ilość, cena (2018)
+zamowienie (id_zamowienia, data_zamowienia, numer_zamowienia)
+towar (nazwa_towaru, id_towaru, cena_zakupu)
+stan_magazynowy(towar, ilosc)
+pozycja_zamowienia (id_pozycji, towar)
+SELECT z.numer_zamowienia, t.nazwa_towaru, t.cena_zakupu, s.ilosc FROM zamowienie z INNER JOIN t
